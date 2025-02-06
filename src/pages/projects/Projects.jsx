@@ -40,7 +40,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div id="projects" className="container mx-auto px-4 my-8 py-10  rounded-lg">
+    <div id="projects" className="container mx-auto px-4 my-8 py-10 bg-base-200  rounded-lg bg-opacity-30">
       <h2 className="text-4xl font-bold text-center">Featured Projects</h2>
       <p className="text-xl font-semibold text-center my-6">
         Showcasing My Web Development Work & Expertise
@@ -50,7 +50,7 @@ const Projects = () => {
         {projects.map((project) => (
           <motion.div
             key={project.id}
-            className="flex flex-col  md:flex-row bg-white shadow-lg rounded-lg overflow-hidden justify-center items-center p-2"
+            className="flex flex-col  md:flex-row  shadow-lg rounded-lg overflow-hidden justify-center items-center p-2"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -59,7 +59,7 @@ const Projects = () => {
             <motion.img
               src={project.image}
               alt={project.name}
-              className="md:w-1/3 w-full h-48 object-cover rounded-lg"
+              className="md:w-1/3 w-full h-48 object-cover  rounded-lg"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             />

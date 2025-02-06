@@ -1,63 +1,44 @@
 import { motion } from "framer-motion";
-import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 const ContactInformation = () => {
   return (
-  <>
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      id="contact"
+      className="p-8 bg-base-200 text-gray-900 shadow-lg rounded-lg flex flex-col lg:flex-row items-center justify-between w-full gap-4 mx-auto"
+    >
+      {/* Left Section - Contact Info */}
+      <div className="space-y-4 w-full lg:w-1/2 text-center font-semibold lg:text-left">
+      <h2 className="text-3xl font-bold mb-6 text-center  text-black">Contact Information</h2>
+        <div className="space-y-4">
+          <div className="flex items-center bg-indigo-200 p-3 rounded-lg justify-center lg:justify-start">
+            <FaPhone className="text-xl mr-3" />
+            <p>+88 018882 185628</p>
+          </div>
+          <div className="flex items-center bg-indigo-200 p-3 rounded-lg justify-center lg:justify-start">
+            <FaEnvelope className="text-xl mr-3" />
+            <p>akashabdulmazid@gmail.com</p>
+          </div>
+          <div className="flex items-center bg-indigo-200  p-3 rounded-lg justify-center lg:justify-start">
+            <FaMapMarkerAlt className="text-xl mr-3" />
+            <p>Dhaka, Bangladesh</p>
+          </div>
+        </div>
+      </div>
 
-  <div className="text-center">
-  <h2 className="text-3xl font-bold mb-6  text-blue-600">Let&apos;s work together!</h2>
-  <p className="mb-4 text-sm font-semibold">I design and code beautifully simple things and I love what I do.</p>
-  </div>
-    <div className="flex flex-col lg:flex-row items-center justify-center p-8 bg-gray-900 text-white rounded-lg gap-8">
-
-      
-{/* Contact Form */}
-<motion.div 
-  initial={{ opacity: 0, x: -50 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.5 }}
-  className="bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-lg lg:mr-8"
->
-
-  <form className="space-y-4">
-    <div className="flex space-x-2">
-      <input type="text" placeholder="First name" className="input input-bordered w-full bg-gray-700" />
-      <input type="text" placeholder="Last name" className="input input-bordered w-full bg-gray-700" />
-    </div>
-    <div className="flex space-x-2">
-      <input type="email" placeholder="Email address" className="input input-bordered w-full bg-gray-700" />
-      <input type="tel" placeholder="Phone number" className="input input-bordered w-full bg-gray-700" />
-    </div>
-    <textarea className="textarea textarea-bordered w-full bg-gray-700" placeholder="Message"></textarea>
-    <button className="btn bg-purple-500 text-white w-full hover:bg-purple-600">Send Message</button>
-  </form>
-</motion.div>
-
-{/* Contact Info */}
-<motion.div 
-  initial={{ opacity: 0, x: 50 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.5 }}
-  className="mt-8 lg:mt-0"
->
-  <div className="space-y-4 text-center lg:text-left">
-    <div className="flex items-center space-x-4">
-      <FaWhatsapp className="text-purple-400 text-xl" />
-      <p className="text-lg">+088 01882 185628</p>
-    </div>
-    <div className="flex items-center space-x-4">
-      <FaEnvelope className="text-purple-400 text-xl" />
-      <p className="text-lg">akashabdulmazid@gmail.com</p>
-    </div>
-    <div className="flex items-center space-x-4">
-      <FaMapMarkerAlt className="text-purple-400 text-xl" />
-      <p className="text-lg">Dhaka, Bangladesh</p>
-    </div>
-  </div>
-</motion.div>
-</div>
-  </>
+      {/* Right Section - Contact Form */}
+      <div className="w-full lg:w-1/2 mt-6 lg:mt-0">
+        <form className="space-y-4">
+          <input type="text" placeholder="Your Name" className="input input-bordered w-full bg-white text-gray-900" />
+          <input type="email" placeholder="Your Email" className="input input-bordered w-full bg-white text-gray-900" />
+          <textarea className="textarea textarea-bordered w-full bg-white text-gray-900" placeholder="Your Message"></textarea>
+          <button className="btn bg-blue-600 text-white w-full hover:bg-blue-700">Send</button>
+        </form>
+      </div>
+    </motion.div>
   );
 };
 

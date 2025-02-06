@@ -1,5 +1,5 @@
 import { FaLaptopCode } from "react-icons/fa6";
-import { Link } from "react-router";
+import { Link } from "react-router"; // Ensure correct import
 
 const Navbar = () => {
   return (
@@ -9,15 +9,15 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link
             to="/"
-            className="btn btn-outline text-white normal-case md:text-xl font-bold flex items-center gap-2"
+            className="btn btn-outline text-white normal-case text-lg md:text-xl font-bold flex items-center gap-2"
           >
             <FaLaptopCode />
             Abdul Mazid Akash
           </Link>
         </div>
 
-        {/* Nav Links */}
-        <div className="hidden md:flex gap-6 md:font-semibold">
+        {/* Desktop Nav Links */}
+        <div className="hidden lg:flex gap-6 font-semibold">
           <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#">Home</a>
           <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#about">About</a>
           <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#skills">Skills</a>
@@ -25,15 +25,15 @@ const Navbar = () => {
           <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#contact">Contact</a>
         </div>
 
-        {/* Mobile Menu */}
-        <div className="md:hidden">
+        {/* Mobile / Tablet Menu */}
+        <div className="lg:hidden">
           <div className="dropdown dropdown-end">
-            <button tabIndex={0} className="btn btn-square btn-ghost text-4xl">
+            <button tabIndex={0} className="btn btn-square btn-ghost text-3xl">
               ☰
             </button>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-gradient-to-tl from-sky-900 to-slate-900 text-white font-semibold rounded-box mt-3 w-48 p-2 shadow-lg gap-2"
+              className="menu menu-sm dropdown-content bg-gradient-to-tl from-sky-900 to-slate-900 text-white font-semibold rounded-box mt-3 w-56 p-2 shadow-lg gap-2"
             >
               <li>
                 <a href="#" className="hover:bg-opacity-40 bg-sky-800 rounded-lg p-2 transition-colors">Home</a>

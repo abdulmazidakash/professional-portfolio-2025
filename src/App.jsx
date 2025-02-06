@@ -29,8 +29,8 @@ function App() {
                   <div  className="pt-16 container mx-auto">
                   <Hero />
                   <AboutMe />
-                  <SkillsSection />
                   <Projects />
+                  <SkillsSection />
                   <ContactInformation />
                   </div>
                 </>

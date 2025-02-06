@@ -34,7 +34,7 @@ const SkillBar = ({ skill }) => (
 );
 
 const SkillsSection = () => (
-  <div id="skills" className="container mx-auto p-12 bg-white rounded-lg shadow-lg">
+  <div id="skills" className="container mx-auto p-12 bg-white rounded-lg shadow-lg my-8">
     <div className="flex flex-col md:flex-row gap-8">
       <div className="md:w-1/2 w-full text-center md:text-left">
       
@@ -42,7 +42,7 @@ const SkillsSection = () => (
         <p className="text-gray-600 mb-4 font-semibold">I create beautiful and scalable web products.</p>
         <p  className="text-gray-600 mb-4 font-semibold"> I specialize in web development and design, using modern technologies to create responsive and user-friendly websites. 
         My expertise covers front-end and back-end technologies, ensuring optimal performance and SEO-friendly structures.</p>
-        <p className="text-gray-600 font-semibold">With experience in HTML, CSS, JavaScript, WordPress, and more, I build scalable solutions that enhance user engagement.</p>
+        <p className="text-gray-600 font-semibold">With experience in HTML, CSS, JavaScript, React, and more, I build scalable solutions that enhance user engagement.</p>
       </div>
       <div className="md:w-1/2 w-full space-y-4">
         {skills.map((skill, index) => (
