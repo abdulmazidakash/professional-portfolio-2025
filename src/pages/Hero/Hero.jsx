@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Hero = () => {
@@ -59,6 +59,9 @@ const Hero = () => {
             </a>
             <a href="https://x.com/abdulmazidakash" className="text-2xl hover:text-gray-300 transition" target="_blank" rel="noopener noreferrer">
               <FaTwitter />
+            </a>
+            <a href="https://www.facebook.com/akashabdulmazid/" className="text-2xl hover:text-gray-300 transition" target="_blank" rel="noopener noreferrer">
+              <FaFacebook />
             </a>
           </motion.div>
 
