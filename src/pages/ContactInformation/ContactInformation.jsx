@@ -1,58 +1,63 @@
-import { FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const ContactInformation = () => {
   return (
-    <div id="contact" className="bg-white text-black py-12 px-4 md:px-12">
-		<h3 className="text-4xl  text-center font-bold mb-8">Contact Information</h3>
-      <div className="w-full  mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-        
-        {/* Left Side - Contact Form */}
-        <div className="border-2 border-green-400 p-4 rounded-lg shadow-md">
-          <h2 className="text-lg md:text-xl font-bold mb-4">Send a Message</h2>
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full border border-green-400 p-2 mb-3 rounded"
-          />
-          <textarea
-            placeholder="Your Message"
-            className="w-full border border-green-400 p-2 mb-3 rounded h-28 md:h-32"
-          />
-          <button className="w-full bg-green-400 text-white py-2 rounded">
-            Send Message
-          </button>
-        </div>
+  <>
 
-        {/* Right Side - Contact Information */}
-        <div className="border-2 border-green-400 p-4 rounded-lg shadow-md flex flex-col justify-center">
-          <h2 className="text-lg md:text-xl font-bold mb-3">Contact Information</h2>
+  <div className="text-center">
+  <h2 className="text-3xl font-bold mb-6  text-blue-600">Let&apos;s work together!</h2>
+  <p className="mb-4 text-sm font-semibold">I design and code beautifully simple things and I love what I do.</p>
+  </div>
+    <div className="flex flex-col lg:flex-row items-center justify-center p-8 bg-gray-900 text-white rounded-lg gap-8">
 
-          <div className="space-y-3 md:space-y-4 mt-4">
-            <div className="flex items-center gap-2 md:gap-3 text-sm md:text-lg">
-              <FaEnvelope className="text-green-400" />
-              <a href="mailto:akashabdulmazid@gmail.com" className="hover:underline break-words">
-                akashabdulmazid@gmail.com
-              </a>
-            </div>
+      
+{/* Contact Form */}
+<motion.div 
+  initial={{ opacity: 0, x: -50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.5 }}
+  className="bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-lg lg:mr-8"
+>
 
-            <div className="flex items-center gap-2 md:gap-3 text-sm md:text-lg">
-              <FaPhone className="text-green-400" />
-              <a href="tel:+880123456789" className="hover:underline">
-                +880 1234 567 89
-              </a>
-            </div>
-
-            <div className="flex items-center gap-2 md:gap-3 text-sm md:text-lg">
-              <FaWhatsapp className="text-green-400" />
-              <a href="https://wa.me/+880123456789" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                +880 1234 567 89 (WhatsApp)
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
+  <form className="space-y-4">
+    <div className="flex space-x-2">
+      <input type="text" placeholder="First name" className="input input-bordered w-full bg-gray-700" />
+      <input type="text" placeholder="Last name" className="input input-bordered w-full bg-gray-700" />
     </div>
+    <div className="flex space-x-2">
+      <input type="email" placeholder="Email address" className="input input-bordered w-full bg-gray-700" />
+      <input type="tel" placeholder="Phone number" className="input input-bordered w-full bg-gray-700" />
+    </div>
+    <textarea className="textarea textarea-bordered w-full bg-gray-700" placeholder="Message"></textarea>
+    <button className="btn bg-purple-500 text-white w-full hover:bg-purple-600">Send Message</button>
+  </form>
+</motion.div>
+
+{/* Contact Info */}
+<motion.div 
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.5 }}
+  className="mt-8 lg:mt-0"
+>
+  <div className="space-y-4 text-center lg:text-left">
+    <div className="flex items-center space-x-4">
+      <FaWhatsapp className="text-purple-400 text-xl" />
+      <p className="text-lg">+088 01882 185628</p>
+    </div>
+    <div className="flex items-center space-x-4">
+      <FaEnvelope className="text-purple-400 text-xl" />
+      <p className="text-lg">akashabdulmazid@gmail.com</p>
+    </div>
+    <div className="flex items-center space-x-4">
+      <FaMapMarkerAlt className="text-purple-400 text-xl" />
+      <p className="text-lg">Dhaka, Bangladesh</p>
+    </div>
+  </div>
+</motion.div>
+</div>
+  </>
   );
 };
 

@@ -7,38 +7,38 @@ const ProjectDetails = () => {
   const projects = [
     {
       id: 1,
-      name: "Project One",
-      image: "https://i.ibb.co.com/KpypCWf0/sholarship-Hub-banner.jpg",
-      technologies: ["React", "Tailwind CSS", "Firebase"],
+      name: "ScholarshipHub",
+      image: "https://i.ibb.co/KpypCWf0/sholarship-Hub-banner.jpg",
+      technologies: ["React", "Tailwind CSS", "MongoDB", "Stripe"],
       description:
-        "A responsive e-commerce platform with dynamic product filtering and cart management.",
-      liveLink: "https://projectone.com",
-      githubLink: "https://github.com/user/project-one",
+        "ScholarshipHub is a comprehensive Scholarship Management System designed to assist students in searching for suitable universities and scholarships.",
+      liveLink: "https://scholarship-hub-akash.netlify.app",
+      githubLink: "https://github.com/abdulmazidakash/c-assignment-12-client-side",
       challenges:
         "Implementing complex filtering and ensuring responsiveness across all devices.",
       improvements: "Add AI-powered recommendations and better performance optimizations.",
     },
     {
       id: 2,
-      name: "Project Two",
-      image: "/project2.jpg",
-      technologies: ["React", "Node.js", "MongoDB"],
+      name: "GlobalVisaHub",
+      image: "https://i.ibb.co/Z6fLkkMD/global-visa-hub.jpg",
+      technologies: ["React", "Tailwind CSS", "MongoDB"],
       description:
-        "A blog platform allowing users to create, edit, and share posts with real-time updates.",
-      liveLink: "https://projecttwo.com",
-      githubLink: "https://github.com/user/project-two",
+        "A user-friendly Global Visa Hub platform that simplifies the process of exploring, applying, and managing visa applications.",
+      liveLink: "https://assignment-10-global-visa-hub-akash.netlify.app",
+      githubLink: "https://github.com/abdulmazidakash/c-assignment-10-visa-navigating-client",
       challenges: "Setting up real-time updates with WebSocket.",
       improvements: "Implement advanced search and tagging functionalities.",
     },
     {
       id: 3,
-      name: "Project Three",
-      image: "/project3.jpg",
-      technologies: ["React", "Redux", "Firebase"],
+      name: "Artifact Atlas",
+      image: "https://i.ibb.co/Tq0Pp0cf/artifacts-banner-image.jpg",
+      technologies: ["React", "Tailwind CSS", "MongoDB"],
       description:
-        "A language learning app with interactive vocabulary and grammar exercises.",
-      liveLink: "https://projectthree.com",
-      githubLink: "https://github.com/user/project-three",
+        "Artifact Atlas is an interactive web platform for exploring and managing historical artifacts.",
+      liveLink: "https://assignment-11-artifact-atlas.netlify.app",
+      githubLink: "https://github.com/abdulmazidakash/c-assignment-11",
       challenges: "Designing an engaging and intuitive UI for users.",
       improvements: "Expand language options and include voice recognition features.",
     },
@@ -49,7 +49,7 @@ const ProjectDetails = () => {
   if (!project) return <div className="text-white text-center">Project not found!</div>;
 
   return (
-    <div className="container mx-auto px-4 rounded-lg my-8  py-10 shadow-lg border-2">
+    <div className="container mx-auto px-4 rounded-lg my-8  py-10 shadow-lg">
       <div className="">
         <div className="card bg-base-100 rounded-xl overflow-hidden text-black">
           <img

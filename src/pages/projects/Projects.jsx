@@ -1,73 +1,120 @@
+/* eslint-disable react/prop-types */
 
+import { BiLinkExternal } from "react-icons/bi";
+import { FaArrowRight, FaGithub } from "react-icons/fa";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
+
+const projects = [
+  {
+    id: 1,
+    name: "ScholarshipHub",
+    image: "https://i.ibb.co/KpypCWf0/sholarship-Hub-banner.jpg",
+    description:
+      "ScholarshipHub is a comprehensive Scholarship Management System designed to assist students in searching for suitable universities and scholarships.",
+    technologies: ["React", "Tailwind CSS", "MongoDB", "Stripe"],
+    liveLink: "https://scholarship-hub-akash.netlify.app",
+    githubLink: "https://github.com/abdulmazidakash/c-assignment-12-client-side",
+  },
+  {
+    id: 2,
+    name: "GlobalVisaHub",
+    image: "https://i.ibb.co/Z6fLkkMD/global-visa-hub.jpg",
+    description:
+      "A user-friendly Global Visa Hub platform that simplifies the process of exploring, applying, and managing visa applications.",
+    technologies: ["React", "Tailwind CSS", "MongoDB"],
+    liveLink: "https://assignment-10-global-visa-hub-akash.netlify.app",
+    githubLink: "https://github.com/abdulmazidakash/c-assignment-10-visa-navigating-client",
+  },
+  {
+    id: 3,
+    name: "Artifact Atlas",
+    image: "https://i.ibb.co/Tq0Pp0cf/artifacts-banner-image.jpg",
+    description:
+      "Artifact Atlas is an interactive web platform for exploring and managing historical artifacts.",
+    technologies: ["React", "Tailwind CSS", "MongoDB"],
+    liveLink: "https://assignment-11-artifact-atlas.netlify.app",
+    githubLink: "https://github.com/abdulmazidakash/c-assignment-11",
+  },
+];
 
 const Projects = () => {
-  const projects = [
-    {
-      id: 1,
-      name: "Project One",
-      image: "https://i.ibb.co.com/KpypCWf0/sholarship-Hub-banner.jpg",
-      description:
-        "A responsive e-commerce platform with dynamic product filtering and cart management.",
-      technologies: ["React", "Tailwind CSS", "Firebase"],
-      liveLink: "https://projectone.com",
-      githubLink: "https://github.com/user/project-one",
-      challenges:
-        "Implementing complex filtering and ensuring responsiveness across all devices.",
-      improvements: "Add AI-powered recommendations and better performance optimizations.",
-    },
-    {
-      id: 2,
-      name: "Project Two",
-      image: "https://i.ibb.co.com/KpypCWf0/sholarship-Hub-banner.jpg",
-      description:
-        "A blog platform allowing users to create, edit, and share posts with real-time updates.",
-      technologies: ["React", "Node.js", "MongoDB"],
-      liveLink: "https://projecttwo.com",
-      githubLink: "https://github.com/user/project-two",
-      challenges: "Setting up real-time updates with WebSocket.",
-      improvements: "Implement advanced search and tagging functionalities.",
-    },
-    {
-      id: 3,
-      name: "Project Three",
-      image: "https://i.ibb.co.com/KpypCWf0/sholarship-Hub-banner.jpg",
-      description:
-        "A language learning app with interactive vocabulary and grammar exercises.",
-      technologies: ["React", "Redux", "Firebase"],
-      liveLink: "https://projectthree.com",
-      githubLink: "https://github.com/user/project-three",
-      challenges: "Designing an engaging and intuitive UI for users.",
-      improvements: "Expand language options and include voice recognition features.",
-    },
-  ];
-
   return (
-    <div id="projects" className="container mx-auto px-4 my-8 rounded-lg bg-gradient-to-br from-gray-900 to-gray-800 text-white py-10">
-      <div className="">
-        <h2 className="text-4xl font-bold text-center mb-8">My Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="card bg-base-100 shadow-xl rounded-xl overflow-hidden text-black">
-              <img
-                src={project.image}
-                alt={project.name}
-                className="w-full h-48 object-cover"
-              />
-              <div className="card-body">
-                <h3 className="card-title text-2xl font-bold">{project.name}</h3>
-                <p className="text-sm text-gray-700">{project.description}</p>
-                <div className="mt-4">
-                  <Link to={`/projects/${project.id}`} className="btn btn-primary btn-sm">
-                    View More / Details
+    <div id="projects" className="container mx-auto px-4 my-8 py-10  rounded-lg">
+      <h2 className="text-4xl font-bold text-center">Featured Projects</h2>
+      <p className="text-xl font-semibold text-center my-6">
+        Showcasing My Web Development Work & Expertise
+      </p>
+
+      <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-6">
+        {projects.map((project) => (
+          <motion.div
+            key={project.id}
+            className="flex flex-col  md:flex-row bg-white shadow-lg rounded-lg overflow-hidden justify-center items-center p-2"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.02 }}
+          >
+            <motion.img
+              src={project.image}
+              alt={project.name}
+              className="md:w-1/3 w-full h-48 object-cover rounded-lg"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            />
+            <div className="p-6 md:w-2/3">
+              <h3 className="text-2xl font-bold text-gray-900">{project.name}</h3>
+              <p className="text-gray-700 mt-2 font-semibold">{project.description}</p>
+
+              {/* Badge Content */}
+              <div className="flex flex-wrap gap-2 mt-3">
+                {project.technologies.map((tech, index) => (
+                  <span key={index} className="badge badge-accent">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Button Content */}
+              <div className="mt-4 flex flex-wrap justify-center md:justify-start gap-4">
+                <motion.a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-success w-full md:w-auto text-center flex items-center gap-2"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <BiLinkExternal size={18} /> Live Demo
+                </motion.a>
+
+                <motion.a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-info w-full md:w-auto text-center flex items-center gap-2"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <FaGithub size={18} /> GitHub
+                </motion.a>
+
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Link
+                    to={`/projects/${project.id}`}
+                    className="btn btn-primary w-full md:w-auto text-center flex items-center gap-2"
+                  >
+                    View More <FaArrowRight size={18} />
                   </Link>
-                </div>
+                </motion.div>
               </div>
             </div>
-          ))}
-        </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
