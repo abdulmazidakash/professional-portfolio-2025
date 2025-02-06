@@ -43,7 +43,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 my-8 rounded-lg bg-gradient-to-br from-gray-900 to-gray-800 text-white py-10">
+    <div id="projects" className="container mx-auto px-4 my-8 rounded-lg bg-gradient-to-br from-gray-900 to-gray-800 text-white py-10">
       <div className="">
         <h2 className="text-4xl font-bold text-center mb-8">My Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

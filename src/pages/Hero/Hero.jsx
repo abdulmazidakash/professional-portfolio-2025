@@ -24,8 +24,10 @@ const Hero = () => {
         {/* Left Side - Text Content */}
         <div className="w-full lg:w-1/2 text-center lg:text-left lg:order-1">
           <h1 className="md:text-5xl sm:text-4xl font-bold">
-            Hi, This is <br />
-            <span className="my-8">Abdul Mazid Akash</span>
+            Hi, This is
+          </h1>
+          <h1 className="md:text-5xl sm:text-4xl font-bold mt-4">
+            Abdul Mazid Akash
           </h1>
           <p className="py-4 md:text-xl sm:text-md text-gray-300">
             Frontend Developer | Web Enthusiast
@@ -61,7 +63,7 @@ const Hero = () => {
 
           {/* Resume Button */}
           <button className="btn btn-primary mt-4">
-            <a href="/resume.pdf" download>
+            <a target="_blank" href="https://drive.google.com/file/d/1awBXEWW9t6vActFzEHVB_vEefZePR9CX/view?usp=sharing" download>
               Download Resume
             </a>
           </button>

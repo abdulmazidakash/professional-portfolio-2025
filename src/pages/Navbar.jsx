@@ -1,46 +1,29 @@
-
-import { FaGoogleScholar } from "react-icons/fa6";
-import { Link, NavLink } from "react-router";
+import { FaLaptopCode } from "react-icons/fa6";
+import { Link } from "react-router";
 
 const Navbar = () => {
   return (
-    <div className="navbar fixed top-0 left-0 right-0 z-50 bg-opacity-30 bg-gradient-to-tr from-sky-900 to-slate-800 backdrop-blur-md text-white shadow-lg">
+    <div className="navbar fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#0d0d2b] to-[#1e1e5c] shadow-lg text-white py-4">
       <div className="w-full max-w-7xl mx-auto px-4 flex justify-between items-center">
-        
         {/* Logo */}
         <div className="flex items-center">
           <Link
             to="/"
             className="btn btn-outline text-white normal-case md:text-xl font-bold flex items-center gap-2"
           >
-            <FaGoogleScholar />
+            <FaLaptopCode />
             Abdul Mazid Akash
           </Link>
         </div>
 
         {/* Nav Links */}
         <div className="hidden md:flex gap-6 md:font-semibold">
-          <NavLink to="/" className="hover:bg-sky-700 md:px-2 px-4 py-2 rounded-lg">
-            Home
-          </NavLink>
-          <NavLink
-            to="/"
-            className="hover:bg-sky-700 md:px-2 px-4 py-2 rounded-lg"
-          >
-            About
-          </NavLink>
-          <NavLink to="/" className="hover:bg-sky-700 md:px-2 px-4 py-2 rounded-lg">
-           Skills
-          </NavLink>
-          <NavLink to="/" className="hover:bg-sky-700 md:px-2 px-4 py-2 rounded-lg">
-           Project
-          </NavLink>
-          {/* <NavLink className="hover:bg-sky-700 md:px-2 px-4 py-2 rounded-lg"> */}
-           <a className="hover:bg-sky-700 md:px-2 px-4 py-2 rounded-lg" href="#contact">Contact</a>
-          {/* </NavLink> */}
+          <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#">Home</a>
+          <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#about">About</a>
+          <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#skills">Skills</a>
+          <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#projects">Projects</a>
+          <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#contact">Contact</a>
         </div>
-
-        
 
         {/* Mobile Menu */}
         <div className="md:hidden">
@@ -50,40 +33,26 @@ const Navbar = () => {
             </button>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-opacity-90 bg-gradient-to-tr from-sky-900 to-slate-900 text-white font-semibold rounded-box mt-3 w-48 p-2 shadow-lg"
+              className="menu menu-sm dropdown-content bg-gradient-to-tl from-sky-900 to-slate-900 text-white font-semibold rounded-box mt-3 w-48 p-2 shadow-lg gap-2"
             >
               <li>
-                <NavLink to="/" className="hover:bg-sky-700 rounded-lg p-2">
-                  Home
-                </NavLink>
+                <a href="#" className="hover:bg-opacity-40 bg-sky-800 rounded-lg p-2 transition-colors">Home</a>
               </li>
               <li>
-                <NavLink
-                  to="/allScholarship"
-                  className="hover:bg-sky-700 rounded-lg p-2"
-                >
-                  About
-                </NavLink>
+                <a href="#about" className="hover:bg-opacity-40 bg-sky-800 rounded-lg p-2 transition-colors">About</a>
               </li>
               <li>
-                <NavLink to="/dashboard" className="hover:bg-sky-700 rounded-lg p-2">
-                  Skills
-                </NavLink>
+                <a href="#skills" className="hover:bg-opacity-40 bg-sky-800 rounded-lg p-2 transition-colors">Skills</a>
               </li>
               <li>
-                <NavLink to="/dashboard" className="hover:bg-sky-700 rounded-lg p-2">
-                  Project
-                </NavLink>
+                <a href="#projects" className="hover:bg-opacity-40 bg-sky-800 rounded-lg p-2 transition-colors">Projects</a>
               </li>
               <li>
-                <NavLink to="/dashboard" className="hover:bg-sky-700 rounded-lg p-2">
-                  Contact
-                </NavLink>
+                <a href="#contact" className="hover:bg-opacity-40 bg-sky-800 rounded-lg p-2 transition-colors">Contact</a>
               </li>
             </ul>
           </div>
         </div>
-
       </div>
     </div>
   );

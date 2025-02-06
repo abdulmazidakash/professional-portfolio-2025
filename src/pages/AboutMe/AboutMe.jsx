@@ -5,7 +5,7 @@ import { MdSportsCricket } from 'react-icons/md';
 
 const AboutMe = () => {
   return (
-    <div className="container mx-auto px-4 sm:px-6 py-8 md:py-12">
+    <div id='about' className="container mx-auto px-4 sm:px-6 py-8 md:py-12">
       {/* Title Section */}
       <div className="text-center mb-6 md:mb-8">
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800">About Me</h1>
