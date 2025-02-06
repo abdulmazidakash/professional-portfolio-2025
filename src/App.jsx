@@ -4,6 +4,7 @@ import ContactInformation from "./pages/ContactInformation/ContactInformation"
 import Footer from "./pages/Footer"
 import Hero from "./pages/Hero/Hero"
 import Navbar from "./pages/Navbar"
+import SkillsSection from "./pages/SkillsSection/SkillsSection"
 
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
         </div>
         <div>
           <AboutMe/>
+        </div>
+        <div>
+          <SkillsSection/>
         </div>
         <div>
           <ContactInformation/>
