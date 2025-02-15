@@ -2,7 +2,7 @@ import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="inset-0 bg-gray-900  p-10 font-semibold text-white mt-8">
+    <footer className="inset-0 bg-slate-900  p-10 font-semibold text-white mt-8">
       {/* Wrapper to center all content */}
       <div className="flex flex-col items-center gap-6">
         {/* Navigation Links */}

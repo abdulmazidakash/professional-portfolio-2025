@@ -59,6 +59,14 @@ const ProjectDetails = () => {
     },
   ];
 
+  // Define a mapping of technology names to DaisyUI badge colors
+const techColors = {
+  React: "badge-primary",       // Blue
+  "Tailwind CSS": "badge-secondary", // Purple
+  MongoDB: "badge-success",     // Green
+  Stripe: "badge-warning",      // Yellow
+};
+
   const project = projects.find((project) => project.id === parseInt(id));
 
   if (!project) return <div className="text-white text-center">Project not found!</div>;
@@ -84,11 +92,23 @@ const ProjectDetails = () => {
           <p className="text-sm text-gray-700 mt-2">{project.description}</p>
 
           <h3 className="text-xl font-bold mt-4">Technologies Used:</h3>
-          <div className="flex flex-wrap gap-2">
+          
+          {/* <div className="flex flex-wrap gap-2">
             {project.technologies.map((tech, index) => (
               <span className="badge badge-success" key={index}>{tech}</span>
             ))}
-          </div>
+          </div> */}
+           {/* Technology Badges */}
+           <div className="flex flex-wrap gap-2 mt-3">
+                {project.technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className={`badge ${techColors[tech] || "badge-neutral"} px-3 py-1 text-sm`}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
 
           <h3 className="text-xl font-bold mt-4 flex items-center gap-2">
             <FaExclamationTriangle className="text-yellow-500" /> Challenges Faced:

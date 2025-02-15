@@ -3,13 +3,13 @@ import { Link } from "react-router"; // Ensure correct import
 
 const Navbar = () => {
   return (
-    <div className="navbar fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#0d0d2b] to-[#1e1e5c] shadow-lg text-white py-4">
+    <div className="navbar fixed top-0 left-0 right-0 z-50 bg-slate-900 shadow-lg text-white py-4">
       <div className="w-full max-w-7xl mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
           <Link
             to="/"
-            className="btn btn-outline text-white normal-case text-lg md:text-xl font-bold flex items-center gap-2"
+            className="btn btn-outline text-white normal-case text-lg md:text-xl font-bold flex items-center gap-2  hover:bg-blue-200 hover:text-black"
           >
             <FaLaptopCode />
             Abdul Mazid Akash
@@ -18,11 +18,11 @@ const Navbar = () => {
 
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex gap-6 font-semibold">
-          <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#">Home</a>
-          <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#about">About</a>
-          <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#skills">Skills</a>
-          <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#projects">Projects</a>
-          <a className="hover:bg-opacity-40 bg-sky-800 px-4 py-2 rounded-lg transition-colors duration-300" href="#contact">Contact</a>
+          <a className="hover:bg-opacity-40 hover:bg-blue-200 hover:text-black  px-4 py-2 rounded-lg transition-colors duration-300" href="#">Home</a>
+          <a className="hover:bg-opacity-40 hover:bg-blue-200 hover:text-black  px-4 py-2 rounded-lg transition-colors duration-300" href="#about">About</a>
+          <a className="hover:bg-opacity-40 hover:bg-blue-200 hover:text-black  px-4 py-2 rounded-lg transition-colors duration-300" href="#skills">Skills</a>
+          <a className="hover:bg-opacity-40 hover:bg-blue-200 hover:text-black  px-4 py-2 rounded-lg transition-colors duration-300" href="#projects">Projects</a>
+          <a className="hover:bg-opacity-40 hover:bg-blue-200 hover:text-black  px-4 py-2 rounded-lg transition-colors duration-300" href="#contact">Contact</a>
         </div>
 
         {/* Mobile / Tablet Menu */}

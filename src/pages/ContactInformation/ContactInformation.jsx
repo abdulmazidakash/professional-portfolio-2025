@@ -35,7 +35,7 @@ const ContactInformation = () => {
           <input type="text" placeholder="Your Name" className="input input-bordered w-full bg-white text-gray-900" />
           <input type="email" placeholder="Your Email" className="input input-bordered w-full bg-white text-gray-900" />
           <textarea className="textarea textarea-bordered w-full bg-white text-gray-900" placeholder="Your Message"></textarea>
-          <button className="btn bg-blue-600 text-white w-full hover:bg-blue-700">Send</button>
+          <button className="btn btn-primary w-full">Send</button>
         </form>
       </div>
     </motion.div>
