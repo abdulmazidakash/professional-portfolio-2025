@@ -74,7 +74,7 @@ const Hero = () => {
           >
             <a 
               target="_blank" 
-              href="https://drive.google.com/file/d/1awBXEWW9t6vActFzEHVB_vEefZePR9CX/view?usp=sharing" 
+              href="https://drive.google.com/drive/folders/1--75kcFgvxmF5xWuTbKLai8OvSSoNCyf?usp=sharing" 
               download
               className="btn btn-primary px-6 py-3 text-lg"
             >

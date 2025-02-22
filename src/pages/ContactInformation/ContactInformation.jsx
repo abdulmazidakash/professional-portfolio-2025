@@ -16,7 +16,7 @@ const ContactInformation = () => {
         <div className="space-y-4">
           <div className="flex items-center bg-indigo-200 p-3 rounded-lg justify-center lg:justify-start">
             <FaPhone className="text-xl mr-3" />
-            <p>+88 018882 185628</p>
+            <p>+88-018882-185628</p>
           </div>
           <div className="flex items-center bg-indigo-200 p-3 rounded-lg justify-center lg:justify-start">
             <FaEnvelope className="text-xl mr-3" />
@@ -24,7 +24,7 @@ const ContactInformation = () => {
           </div>
           <div className="flex items-center bg-indigo-200  p-3 rounded-lg justify-center lg:justify-start">
             <FaMapMarkerAlt className="text-xl mr-3" />
-            <p>Dhaka, Bangladesh</p>
+            <p>Feni, Bangladesh</p>
           </div>
         </div>
       </div>
