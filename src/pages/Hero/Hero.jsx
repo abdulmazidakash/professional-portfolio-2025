@@ -1,9 +1,10 @@
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
   return (
-    <div className="relative flex items-center justify-center bg-black overflow-hidden rounded-2xl p-12">
+    <div className="relative flex items-center justify-center bg-black overflow-hidden rounded-lg p-12">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-green-900 opacity-80"></div>
 
@@ -78,7 +79,15 @@ const Hero = () => {
               download
               className="btn btn-primary px-6 py-3 text-lg"
             >
-              Download Resume
+            <Typewriter
+          words={['Download Resume', 'Get My CV', 'Resume Here!']}
+          loop={Infinity}
+          cursor
+          cursorStyle="_"
+          typeSpeed={90}
+          deleteSpeed={50}
+          delaySpeed={1000}
+        />
             </a>
           </motion.div>
         </div>

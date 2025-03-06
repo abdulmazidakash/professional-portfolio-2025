@@ -2,9 +2,12 @@ import { FaArrowUpRightFromSquare, FaGithub, FaWrench } from "react-icons/fa6";
 import { useParams } from "react-router";
 import { motion } from "framer-motion";
 import { FaExclamationTriangle } from "react-icons/fa";
+import { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 const ProjectDetails = () => {
   const { id } = useParams();
+  const { darkMode } = useContext(ThemeContext); // Get dark mode state
 
   const projects = [
     {
@@ -76,9 +79,13 @@ const techColors = {
       initial={{ opacity: 0, y: 20 }} 
       animate={{ opacity: 1, y: 0 }} 
       transition={{ duration: 0.5 }} 
-      className="container mx-auto px-4 rounded-lg my-8 py-10 shadow-lg"
+      className={`container mx-auto px-4 rounded-lg my-8 py-10 shadow-lg ${
+        darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+      }`}
     >
-      <div className="card bg-base-100 rounded-xl overflow-hidden text-black">
+      <div className={`card bg-base-100 rounded-xl overflow-hidden text-black ${
+        darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+      }`}>
         <motion.img
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
@@ -89,7 +96,7 @@ const techColors = {
         />
         <div className="card-body">
           <h2 className="card-title text-3xl font-bold">{project.name}</h2>
-          <p className="text-sm text-gray-700 mt-2">{project.description}</p>
+          <p className="text-sm  mt-2">{project.description}</p>
 
           <h3 className="text-xl font-bold mt-4">Technologies Used:</h3>
           
@@ -113,7 +120,7 @@ const techColors = {
           <h3 className="text-xl font-bold mt-4 flex items-center gap-2">
             <FaExclamationTriangle className="text-yellow-500" /> Challenges Faced:
           </h3>
-          <ul className="list-disc list-inside text-gray-700">
+          <ul className="list-disc list-inside ">
             {project.challenges.map((challenge, index) => (
               <li key={index}>{challenge}</li>
             ))}
@@ -122,7 +129,7 @@ const techColors = {
           <h3 className="text-xl font-bold mt-4 flex items-center gap-2">
             <FaWrench className="text-blue-500" /> Potential Improvements:
           </h3>
-          <ul className="list-disc list-inside text-gray-700">
+          <ul className="list-disc list-inside ">
             {project.improvements.map((improvement, index) => (
               <li key={index}>{improvement}</li>
             ))}

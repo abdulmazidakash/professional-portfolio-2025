@@ -4,6 +4,8 @@ import { BiLinkExternal } from "react-icons/bi";
 import { FaArrowRight, FaGithub } from "react-icons/fa";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 // Project data
 const projects = [
@@ -48,8 +50,13 @@ const techColors = {
 };
 
 const Projects = () => {
+
+  
+  const { darkMode } = useContext(ThemeContext); // Get dark mode state
   return (
-    <div id="projects" className="container mx-auto px-4 my-8 py-10 bg-base-200 rounded-lg bg-opacity-30">
+    <div id="projects" className={`container mx-auto px-4 my-8 py-10 bg-base-200 rounded-lg bg-opacity-30 ${
+      darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+    }`} >
       <h2 className="text-4xl font-bold text-center">Featured Projects</h2>
       <p className="text-xl font-semibold text-center my-6">
         Showcasing My Web Development Work & Expertise
@@ -59,7 +66,9 @@ const Projects = () => {
         {projects.map((project) => (
           <motion.div
             key={project.id}
-            className="flex flex-col md:flex-row shadow-lg rounded-lg overflow-hidden justify-center items-center p-2"
+            className={`flex flex-col md:flex-row shadow-lg rounded-lg overflow-hidden justify-center items-center p-2 ${
+              darkMode ? "bg-gray-800 text-white" : "text-gray-900"
+            }`}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -75,8 +84,8 @@ const Projects = () => {
             />
             {/* Project Details */}
             <div className="p-6 md:w-2/3">
-              <h3 className="text-2xl font-bold text-gray-900">{project.name}</h3>
-              <p className="text-gray-700 mt-2 font-semibold">{project.description}</p>
+              <h3 className="text-2xl font-bold">{project.name}</h3>
+              <p className="mt-2 font-semibold">{project.description}</p>
 
               {/* Technology Badges */}
               <div className="flex flex-wrap gap-2 mt-3">
