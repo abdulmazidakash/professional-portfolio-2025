@@ -2,7 +2,7 @@
 ```md
 # 🚀 Professional Portfolio 2025
 
-![Portfolio Banner](![alt text](image.png))
+<!-- ![Portfolio Banner](![alt text](image.png)) -->
 
 Welcome to my **Professional Portfolio 2025**! This project showcases my skills, experience, and work as a **Frontend Developer**. Built with **React, Tailwind CSS, Framer Motion, and Vite**, this portfolio is designed to be **fast, responsive, and visually appealing**.
 
@@ -97,10 +97,12 @@ professional-portfolio-2025/
 ## 📸 Screenshots
 
 ### 🌙 Dark Mode:
-![Dark Mode Screenshot](![alt text](image-2.png))
+(![alt text](image-2.png))
+<!-- ![Dark Mode Screenshot](![alt text](image-2.png)) -->
 
 ### ☀️ Light Mode:
-![Light Mode Screenshot](![alt text](image-1.png))
+(![alt text](image-1.png))
+<!-- ![Light Mode Screenshot](![alt text](image-1.png)) -->
 
 ---
 
