@@ -1,8 +1,6 @@
 
-```md
 # 🚀 Professional Portfolio 2025
 
-<!-- ![Portfolio Banner](![alt text](image.png)) -->
 
 Welcome to my **Professional Portfolio 2025**! This project showcases my skills, experience, and work as a **Frontend Developer**. Built with **React, Tailwind CSS, Framer Motion, and Vite**, this portfolio is designed to be **fast, responsive, and visually appealing**.
 
@@ -46,9 +44,9 @@ Welcome to my **Professional Portfolio 2025**! This project showcases my skills,
 
 1️⃣ **Clone the Repository**
 ```bash
-git clone https://github.com/abdulmazidakash/professional-portfolio-2025
+git clone https://github.com/your-username/professional-portfolio-2025.git
 cd professional-portfolio-2025
-```
+
 
 2️⃣ **Install Dependencies**
 ```bash
@@ -97,11 +95,11 @@ professional-portfolio-2025/
 ## 📸 Screenshots
 
 ### 🌙 Dark Mode:
-(![alt text](image-2.png))
+![alt text](image-2.png)
 <!-- ![Dark Mode Screenshot](![alt text](image-2.png)) -->
 
 ### ☀️ Light Mode:
-(![alt text](image-1.png))
+![alt text](image-1.png)
 <!-- ![Light Mode Screenshot](![alt text](image-1.png)) -->
 
 ---
