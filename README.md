@@ -1,6 +1,3 @@
-Here is a well-structured **README.md** for your project, including a **banner image**, **live link**, and all relevant sections.
-
----
 
 ```md
 # 🚀 Professional Portfolio 2025
