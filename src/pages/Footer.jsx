@@ -1,4 +1,5 @@
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -22,6 +23,9 @@ const Footer = () => {
           <a href="#contact" className="link link-hover">
             Contact
           </a>
+          <Link  to={'/personal-dashboard'} className="link link-hover">
+           Personal Dashboard
+          </Link>
         </nav>
 
         {/* Social Media Icons */}

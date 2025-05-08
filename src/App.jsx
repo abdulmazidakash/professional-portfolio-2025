@@ -8,6 +8,8 @@ import Projects from "./pages/projects/projects";
 import SkillsSection from "./pages/SkillsSection/SkillsSection";
 import ProjectDetails from "./pages/projectsDetails/projectsDetails";
 import ParticlesBackground from "./components/ParticlesBackground";
+import PersonalDashboard from "./personal-dashboard/PersonalDashboard";
+import AddProject from "./personal-dashboard/AddProject";
 
 function App() {
   return (
@@ -49,6 +51,24 @@ function App() {
               </div>
             }
           />
+{/* --------personal dashboard start area ----------------------------- */}
+          <Route
+          path="/personal-dashboard"
+          element={
+            <div className="pt-10 mt-16 container mx-auto">
+              <PersonalDashboard/>
+            </div>
+          }
+          />
+          <Route
+          path="/add-project"
+          element={
+            <div className="pt-10 mt-16 container mx-auto">
+              <AddProject/>
+            </div>
+          }
+          />
+          {/* --------------------personal dashboard end area -------------- */}
         </Routes>
 
         {/* Footer */}
