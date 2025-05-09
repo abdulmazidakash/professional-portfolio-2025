@@ -10,6 +10,28 @@ import {
 
 const AddProjectForm = () => {
   
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+
+    const form = e.target;
+    const name = form.name.value;
+    const description = form.description.value;
+    const technologies = form.technologies.value;
+    const liveLink = form.liveLink.value;
+    const githubLink = form.githubLink.value;
+    const date = form.date.value;
+
+    const projectData = {
+      name,
+      description,
+      technologies,
+      liveLink,
+      githubLink,
+      date,
+    }
+    console.log("project data", projectData);
+
+  }
 
 
   return (
@@ -64,7 +86,7 @@ const AddProjectForm = () => {
         </div>
       )} */}
 
-      <form className="space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-5">
         {/* Project Name */}
         <div className="form-control">
           <label className="label font-semibold text-sm">
@@ -144,6 +166,7 @@ const AddProjectForm = () => {
             type="date"
             name="date"
             className="input input-bordered w-full"
+            defaultValue={new Date().toISOString().split("T")[0]} // Set default date to today
           />
         </div>
 
