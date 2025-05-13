@@ -4,63 +4,78 @@ import { motion } from "framer-motion";
 import { FaExclamationTriangle } from "react-icons/fa";
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const ProjectDetails = () => {
   const { id } = useParams();
+  console.log('use params',id);
   const { darkMode } = useContext(ThemeContext); // Get dark mode state
 
-  const projects = [
-    {
-      id: 1,
-      name: "ScholarshipHub",
-      image: "https://i.ibb.co/KpypCWf0/sholarship-Hub-banner.jpg",
-      technologies: ["React", "Tailwind CSS", "MongoDB", "Stripe"],
-      description:
-        "ScholarshipHub is a comprehensive Scholarship Management System designed to assist students in searching for suitable universities and scholarships. It also facilitates the application process, allowing students to apply for scholarships directly through the platform. The system supports three types of users: default users, administrators, and moderators. Upon registration, a user is assigned the 'user' role by default. Administrators have the capability to change user roles as needed.",
-      liveLink: "https://scholarship-hub-akash.netlify.app",
-      githubLink: "https://github.com/abdulmazidakash/c-assignment-12-client-side",
-      challenges: [
-        " Make a pagination in all Scholarship pages",
-        " Implement sorting/filtering function in Manage Applied Application in moderator and admin Dashboard.",
-        "  Implement an analytics Chart page in the Admin dashboard",
-      ],
-      improvements: [
-        "Add AI-powered recommendations.",
-        "Optimize performance for faster loading.",
-      ],
+  // const projects = [
+  //   {
+  //     id: 1,
+  //     name: "ScholarshipHub",
+  //     image: "https://i.ibb.co/KpypCWf0/sholarship-Hub-banner.jpg",
+  //     technologies: ["React", "Tailwind CSS", "MongoDB", "Stripe"],
+  //     description:
+  //       "ScholarshipHub is a comprehensive Scholarship Management System designed to assist students in searching for suitable universities and scholarships. It also facilitates the application process, allowing students to apply for scholarships directly through the platform. The system supports three types of users: default users, administrators, and moderators. Upon registration, a user is assigned the 'user' role by default. Administrators have the capability to change user roles as needed.",
+  //     liveLink: "https://scholarship-hub-akash.netlify.app",
+  //     githubLink: "https://github.com/abdulmazidakash/c-assignment-12-client-side",
+  //     challenges: [
+  //       " Make a pagination in all Scholarship pages",
+  //       " Implement sorting/filtering function in Manage Applied Application in moderator and admin Dashboard.",
+  //       "  Implement an analytics Chart page in the Admin dashboard",
+  //     ],
+  //     improvements: [
+  //       "Add AI-powered recommendations.",
+  //       "Optimize performance for faster loading.",
+  //     ],
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "GlobalVisaHub",
+  //     image: "https://i.ibb.co/Z6fLkkMD/global-visa-hub.jpg",
+  //     technologies: ["React", "Tailwind CSS", "MongoDB"],
+  //     description:
+  //       "A user-friendly Global Visa Hub platform that simplifies the process of exploring, applying, and managing visa applications.",
+  //     liveLink: "https://assignment-10-global-visa-hub-akash.netlify.app",
+  //     githubLink: "https://github.com/abdulmazidakash/c-assignment-10-visa-navigating-client",
+  //     challenges: [
+  //       " At the top of the “All visas” page, Add a dropdown menu where you will implement filter functionality based on visa types.",
+  //       " Implement Search functionality on the “My visa applications” page based on the country name through an input field and a search button.",
+  //       " Implement a dark/light theme toggle for the home page.",
+  //     ],
+  //     improvements: ["Implement advanced search and tagging functionalities."],
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Artifact Atlas",
+  //     image: "https://i.ibb.co/Tq0Pp0cf/artifacts-banner-image.jpg",
+  //     technologies: ["React", "Tailwind CSS", "MongoDB"],
+  //     description:
+  //       "Artifact Atlas is an interactive web platform for exploring and managing historical artifacts.",
+  //     liveLink: "https://assignment-11-artifact-atlas.netlify.app",
+  //     githubLink: "https://github.com/abdulmazidakash/c-assignment-11",
+  //     challenges: [
+  //       "Toggle Like Button The Like Button allows users to toggle between Liked and Disliked states.",
+  //       "Search Functionality On the top of the All Artifacts Page",
+  //     ],
+  //     improvements: [" Add a spinner when the data is in a loading state."],
+  //   },
+  // ];
+
+  const { data: project = [], isLoading, isError } = useQuery({
+    queryKey: ["project", id],
+    queryFn: async () => {
+      const response = await axios.get(`http://localhost:3000/projects/${id}`);
+      return response.data;
     },
-    {
-      id: 2,
-      name: "GlobalVisaHub",
-      image: "https://i.ibb.co/Z6fLkkMD/global-visa-hub.jpg",
-      technologies: ["React", "Tailwind CSS", "MongoDB"],
-      description:
-        "A user-friendly Global Visa Hub platform that simplifies the process of exploring, applying, and managing visa applications.",
-      liveLink: "https://assignment-10-global-visa-hub-akash.netlify.app",
-      githubLink: "https://github.com/abdulmazidakash/c-assignment-10-visa-navigating-client",
-      challenges: [
-        " At the top of the “All visas” page, Add a dropdown menu where you will implement filter functionality based on visa types.",
-        " Implement Search functionality on the “My visa applications” page based on the country name through an input field and a search button.",
-        " Implement a dark/light theme toggle for the home page.",
-      ],
-      improvements: ["Implement advanced search and tagging functionalities."],
-    },
-    {
-      id: 3,
-      name: "Artifact Atlas",
-      image: "https://i.ibb.co/Tq0Pp0cf/artifacts-banner-image.jpg",
-      technologies: ["React", "Tailwind CSS", "MongoDB"],
-      description:
-        "Artifact Atlas is an interactive web platform for exploring and managing historical artifacts.",
-      liveLink: "https://assignment-11-artifact-atlas.netlify.app",
-      githubLink: "https://github.com/abdulmazidakash/c-assignment-11",
-      challenges: [
-        "Toggle Like Button The Like Button allows users to toggle between Liked and Disliked states.",
-        "Search Functionality On the top of the All Artifacts Page",
-      ],
-      improvements: [" Add a spinner when the data is in a loading state."],
-    },
-  ];
+  });
+  console.log(`all project---->`,project);
+  
+  if (isLoading) return <p className="text-center text-lg">Loading...</p>;
+  if (isError || !project) return <p className="text-center text-red-500">Project not found!</p>;
 
   // Define a mapping of technology names to DaisyUI badge colors
 const techColors = {
@@ -70,7 +85,7 @@ const techColors = {
   Stripe: "badge-warning",      // Yellow
 };
 
-  const project = projects.find((project) => project.id === parseInt(id));
+  // const project = projects.find((project) => project.id === parseInt(id));
 
   if (!project) return <div className="text-white text-center">Project not found!</div>;
 
@@ -90,7 +105,7 @@ const techColors = {
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
-          src={project.image}
+          src={project.imageUrl}
           alt={project.name}
           className="w-full h-96 object-cover rounded-lg"
         />
@@ -100,22 +115,20 @@ const techColors = {
 
           <h3 className="text-xl font-bold mt-4">Technologies Used:</h3>
           
-          {/* <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech, index) => (
-              <span className="badge badge-success" key={index}>{tech}</span>
-            ))}
-          </div> */}
-           {/* Technology Badges */}
-           <div className="flex flex-wrap gap-2 mt-3">
-                {project.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className={`badge ${techColors[tech] || "badge-neutral"} px-3 py-1 text-sm`}
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+          <div className="flex flex-wrap gap-2 mt-2">
+  {typeof project.technologies === "string"
+    ? project.technologies.split(',').map((tech, index) => (
+        <span className={`badge ${techColors[tech.trim()] || "badge-neutral"}`} key={index}>
+          {tech.trim()}
+        </span>
+      ))
+    : project.technologies.map((tech, index) => (
+        <span className={`badge ${techColors[tech.trim()] || "badge-neutral"}`} key={index}>
+          {tech.trim()}
+        </span>
+      ))}
+</div>
+
 
           <h3 className="text-xl font-bold mt-4 flex items-center gap-2">
             <FaExclamationTriangle className="text-yellow-500" /> Challenges Faced:

@@ -10,6 +10,8 @@ import ProjectDetails from "./pages/projectsDetails/projectsDetails";
 import ParticlesBackground from "./components/ParticlesBackground";
 import PersonalDashboard from "./personal-dashboard/PersonalDashboard";
 import AddProject from "./personal-dashboard/AddProject";
+import AllProject from "./personal-dashboard/AllProject";
+import EditProjectForm from "./personal-dashboard/EditProjectForm";
 
 function App() {
   return (
@@ -65,6 +67,22 @@ function App() {
           element={
             <div className="pt-10 mt-16 container mx-auto">
               <AddProject/>
+            </div>
+          }
+          />
+          <Route
+          path="/all-project"
+          element={
+            <div className="pt-10 mt-16 container mx-auto">
+              <AllProject/>
+            </div>
+          }
+          />
+          <Route
+          path="/update-project/:id"
+          element={
+            <div className="pt-10 mt-16 container mx-auto">
+              <EditProjectForm/>
             </div>
           }
           />

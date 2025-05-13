@@ -4,16 +4,23 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 // eslint-disable-next-line react-hooks/rules-of-hooks
 const axiosPublic = useAxiosPublic();
 
-export const imageUpload = async imageData =>{
-	
+export const imageUpload = async imageData => {
 	const formData = new FormData();
-	formData.append('image', imageData)
-	const {data} = await axiosPublic.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_API_KEY}`, formData)
-
-
-	return data.data.display_url;
-}
-
+	formData.append('image', imageData); // ইমেজ ফাইল যুক্ত করা
+  
+	const { data } = await axiosPublic.post(
+	  `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_API_KEY}`, // API key .env ফাইল থেকে নিচ্ছে
+	  formData,
+	  {
+		headers: {
+		  'Content-Type': 'multipart/form-data', // ফর্মডেটা পাঠানোর জন্য প্রয়োজনীয় হেডার
+		},
+	  }
+	);
+  
+	return data.data.display_url; // সফল হলে display_url রিটার্ন
+  };
+  
 
 export const saveUser = async user =>{
 	await axiosPublic.post(`${import.meta.env.VITE_API_URL}/users/${user.email}`, {

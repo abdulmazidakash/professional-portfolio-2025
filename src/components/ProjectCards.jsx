@@ -30,9 +30,9 @@ const ProjectCard = ({ project }) => {
     >
       <figure>
         <img
-          src={project.image}
+          src={project.imageUrl}
           alt={project.name}
-          className="w-full h-48 object-cover"
+          className="w-full h-48 object-cover border-b-1 border-gray-300"
         />
       </figure>
 
@@ -41,19 +41,23 @@ const ProjectCard = ({ project }) => {
           {project.name}
         </h2>
         <p className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
-          {project.description}
+        {project.description?.split(" ").slice(0, 10).join(" ")}...
         </p>
 
-        <div className="flex flex-wrap gap-2 mt-3">
-  {project.technologies.map((tech, index) => (
-    <div
-      key={index}
-      className={`badge text-sm px-3 py-1 ${techColors[tech] || "badge-neutral"}`}
-    >
-      {tech}
-    </div>
-  ))}
+        <div className="flex flex-wrap gap-2 mt-2">
+  {typeof project.technologies === "string"
+    ? project.technologies.split(',').map((tech, index) => (
+        <span className={`badge ${techColors[tech.trim()] || "badge-neutral"}`} key={index}>
+          {tech.trim()}
+        </span>
+      ))
+    : project.technologies.map((tech, index) => (
+        <span className={`badge ${techColors[tech.trim()] || "badge-neutral"}`} key={index}>
+          {tech.trim()}
+        </span>
+      ))}
 </div>
+
 
 
         <div className="card-actions justify-between mt-5 flex flex-wrap gap-2">
@@ -66,7 +70,7 @@ const ProjectCard = ({ project }) => {
             Live <FaExternalLinkAlt />
           </a>
           <Link
-            to={`/projects/${project.id}`}
+            to={`/projects/${project._id}`}
             className="btn btn-sm btn-outline gap-2"
           >
             View More <FaExternalLinkAlt />
