@@ -20,45 +20,44 @@ const ProjectCard = ({ project }) => {
   
 
   return (
-    <motion.div
-      key={project.id}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.3 }}
-      className={`card w-full shadow-lg border bg-base-100 border-gray-200 dark:border-gray-700 ${darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"}`}
-    >
-      <figure>
-        <img
-          src={project.imageUrl}
-          alt={project.name}
-          className="w-full h-48 object-cover border-b-1 border-gray-300"
-        />
-      </figure>
+        <motion.div
+          key={project.id}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.3 }}
+          className={`card w-full shadow-lg border bg-base-100 border-gray-200 dark:border-gray-700 ${darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"}`}
+        >
+          <figure>
+            <img
+              src={project.imageUrl}
+              alt={project.name}
+              className="w-full h-48 object-cover border-b-1 border-gray-300"
+            />
+          </figure>
 
-      <div className="card-body px-5 py-4">
-        <h2 className={`card-title text-xl font-bold  ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
-          {project.name}
-        </h2>
-        <p className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
-        {project.description?.split(" ").slice(0, 10).join(" ")}...
-        </p>
+          <div className="card-body px-5 py-4">
+            <h2 className={`card-title text-xl font-bold  ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
+              {project.name}
+            </h2>
+            <p className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
+            {project.description?.split(" ").slice(0, 10).join(" ")}...
+            </p>
 
-        <div className="flex flex-wrap gap-2 mt-2">
-  {typeof project.technologies === "string"
-    ? project.technologies.split(',').map((tech, index) => (
-        <span className={`badge ${techColors[tech.trim()] || "badge-neutral"}`} key={index}>
-          {tech.trim()}
-        </span>
-      ))
-    : project.technologies.map((tech, index) => (
-        <span className={`badge ${techColors[tech.trim()] || "badge-neutral"}`} key={index}>
-          {tech.trim()}
-        </span>
-      ))}
-</div>
-
-
+            {/* technology input  */}
+            <div className="flex flex-wrap gap-2 mt-2">
+              {typeof project.technologies === "string"
+                ? project.technologies.split(',').map((tech, index) => (
+                    <span className={`badge ${techColors[tech.trim()] || "badge-neutral"}`} key={index}>
+                      {tech.trim()}
+                    </span>
+                  ))
+                : project.technologies.map((tech, index) => (
+                    <span className={`badge ${techColors[tech.trim()] || "badge-neutral"}`} key={index}>
+                      {tech.trim()}
+                    </span>
+                  ))}
+            </div>
 
         <div className="card-actions justify-between mt-5 flex flex-wrap gap-2">
           <a

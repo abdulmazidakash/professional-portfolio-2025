@@ -73,7 +73,7 @@ const AllProject = () => {
       <h1 className="text-center text-3xl font-bold mb-6 text-[#317371]">All Projects: {projects.length}</h1>
 
       <div className="overflow-x-auto">
-        <table className="table w-full table-zebra">
+        <table className="table w-full">
           <thead className="bg-[#A2B9A7] text-white">
             <tr>
               <th>#</th>

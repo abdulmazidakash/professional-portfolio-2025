@@ -11,7 +11,6 @@ import { imageUpload, shortImageName } from "../utils/utils";
 
 import { useState } from "react";
 import toast from "react-hot-toast";
-// import useAxiosPublic from "../hooks/useAxiosPublic";
 import axios from "axios";
 import { useNavigate } from "react-router";
 
@@ -19,8 +18,6 @@ const AddProjectForm = () => {
 
   const [uploadImage, setUploadImage] = useState({ image: { name: 'upload button' } });
   const navigate = useNavigate();
-  // const [loading, setLoading] = useState(false);
-  // const axiosPublic = useAxiosPublic();
   
   const handleSubmit = async (e) =>{
     e.preventDefault();
@@ -101,39 +98,38 @@ const improvements = improvementsText
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-5">
-  {/* //image upload input  */}
-        {/* File Upload Section */}
-  <div className="form-control mb-4">
-    <label className="label font-semibold text-sm">
-      <FaPlus className="mr-2 text-[#785F54]" />
-      Project Image
-    </label>
+        {/* //image upload input  */}
+        <div className="form-control mb-4">
+          <label className="label font-semibold text-sm">
+            <FaPlus className="mr-2 text-[#785F54]" />
+            Project Image
+          </label>
 
-    <label
-      htmlFor="image"
-      className="flex items-center justify-between gap-3 border-2 border-dashed rounded-lg px-4 py-3 cursor-pointer hover:bg-gray-50"
-    >
-      <div className="flex items-center gap-3 text-sm text-gray-700">
-        <FaPlus className="text-[#317371]" />
-        {shortImageName(uploadImage?.image)}
-      </div>
-      <span className="text-xs text-gray-500">Click to upload</span>
-    </label>
+          <label
+            htmlFor="image"
+            className="flex items-center justify-between gap-3 border-2 border-dashed rounded-lg px-4 py-3 cursor-pointer hover:bg-gray-50"
+          >
+            <div className="flex items-center gap-3 text-sm text-gray-700">
+              <FaPlus className="text-[#317371]" />
+              {shortImageName(uploadImage?.image)}
+            </div>
+            <span className="text-xs text-gray-500">Click to upload</span>
+          </label>
 
-    <input
-      id="image"
-      name="image"
-      type="file"
-      accept="image/*"
-      className="hidden"
-      onChange={(e) =>
-        setUploadImage({
-          image: e.target.files[0],
-          url: URL.createObjectURL(e.target.files[0]),
-        })
-      }
-    />
-  </div>
+          <input
+            id="image"
+            name="image"
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={(e) =>
+              setUploadImage({
+                image: e.target.files[0],
+                url: URL.createObjectURL(e.target.files[0]),
+              })
+            }
+          />
+        </div>
         {/* Project Name */}
         <div className="form-control">
           <label className="label font-semibold text-sm">
@@ -204,32 +200,32 @@ const improvements = improvementsText
           />
         </div>
         {/* Challenges */}
-<div className="form-control">
-  <label className="label font-semibold text-sm">
-    <FaTools className="mr-2 text-[#785F54]" />
-    Challenges (one per line)
-  </label>
-  <textarea
-    name="challenges"
-    placeholder="Write each challenge in a new line"
-    className="textarea textarea-bordered w-full"
-    rows={3}
-  />
-</div>
+          <div className="form-control">
+            <label className="label font-semibold text-sm">
+              <FaTools className="mr-2 text-[#785F54]" />
+              Challenges (one per line)
+            </label>
+            <textarea
+              name="challenges"
+              placeholder="Write each challenge in a new line"
+              className="textarea textarea-bordered w-full"
+              rows={3}
+            />
+          </div>
 
-{/* Improvements */}
-<div className="form-control">
-  <label className="label font-semibold text-sm">
-    <FaTools className="mr-2 text-[#785F54]" />
-    Improvements (one per line)
-  </label>
-  <textarea
-    name="improvements"
-    placeholder="Write each improvement in a new line"
-    className="textarea textarea-bordered w-full"
-    rows={3}
-  />
-</div>
+          {/* Improvements */}
+          <div className="form-control">
+            <label className="label font-semibold text-sm">
+              <FaTools className="mr-2 text-[#785F54]" />
+              Improvements (one per line)
+            </label>
+            <textarea
+              name="improvements"
+              placeholder="Write each improvement in a new line"
+              className="textarea textarea-bordered w-full"
+              rows={3}
+            />
+          </div>
 
 
         {/* Date */}

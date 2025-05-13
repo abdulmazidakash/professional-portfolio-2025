@@ -17,8 +17,6 @@ import Swal from "sweetalert2";
   const EditProjectForm = () => {
 	const { id } = useParams();
 	const navigate = useNavigate();
-  
-	// const [project, setProject] = useState(null);
 	const [uploadImage, setUploadImage] = useState({ image: { name: 'upload button' } });
   
 	const { data: project = [] } = useQuery({
