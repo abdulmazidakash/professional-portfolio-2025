@@ -58,7 +58,7 @@ const ProjectDetails = () => {
         />
         <div className="card-body">
           <h2 className="card-title text-3xl font-bold">{project.name}</h2>
-          <p className="text-sm  mt-2">{project.description}</p>
+          <p className="text-sm  mt-2 text-justify">{project.description}</p>
 
           <h3 className="text-xl font-bold mt-4">Technologies Used:</h3>
           

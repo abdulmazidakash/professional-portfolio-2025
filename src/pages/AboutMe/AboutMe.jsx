@@ -64,10 +64,10 @@ const AboutMe = () => {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <div className="card-body p-0 md:p-4">
-            <p className="mb-3 md:mb-4 text-base md:text-lg leading-relaxed">
+            <p className="mb-3 md:mb-4 text-base font-semibold text-justify">
               Hi, I’m Abdul Mazid Akash, a passionate frontend web developer with a knack for creating beautiful and functional web applications. My journey started from curiosity, and over time, I&apos;ve honed my skills in HTML, CSS, JavaScript, React, and Tailwind CSS.
             </p>
-            <p className="text-base md:text-lg leading-relaxed">
+            <p className="text-base font-semibold text-justify">
               I love building interactive UI/UX and enjoy the challenge of solving problems with code. There’s always something new to learn in programming, which keeps me motivated and excited about the work I do.
             </p>
           </div>
@@ -96,7 +96,7 @@ const AboutMe = () => {
                 transition={{ duration: 1, delay: 0.6 }}
               >
                 <MdSportsCricket className="flex-shrink-0 text-xl md:text-2xl mr-2 md:mr-3 text-green-600" />
-                <span className="text-sm md:text-base">
+                <span className="text-sm md:text-base text-justify">
                   Cricket - I&apos;m passionate about cricket, both playing and watching. The strategy and teamwork involved in the game fascinate me, and I enjoy weekend matches with friends.
                 </span>
               </motion.li>
@@ -107,7 +107,7 @@ const AboutMe = () => {
                 transition={{ duration: 1, delay: 0.7 }}
               >
                 <GiShuttlecock className="flex-shrink-0 text-xl md:text-2xl mr-2 md:mr-3 text-purple-600" />
-                <span className="text-sm md:text-base">
+                <span className="text-sm md:text-base text-justify">
                   Badminton - I love the fast-paced nature of badminton. It&apos;s my go-to sport for staying active and improving reflexes, playing regularly at local courts.
                 </span>
               </motion.li>
@@ -118,7 +118,7 @@ const AboutMe = () => {
                 transition={{ duration: 1, delay: 0.8 }}
               >
                 <FaLaptopCode className="flex-shrink-0 text-xl md:text-2xl mr-2 md:mr-3 text-blue-600" />
-                <span className="text-sm md:text-base">
+                <span className="text-sm md:text-base text-justify">
                   Coding - Of course, coding is both my profession and my passion! It’s the heart of everything I do.
                 </span>
               </motion.li>

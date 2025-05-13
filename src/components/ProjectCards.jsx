@@ -41,7 +41,7 @@ const ProjectCard = ({ project }) => {
             <h2 className={`card-title text-xl font-bold  ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
               {project.name}
             </h2>
-            <p className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
+            <p className={`text-sm text-justify ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
             {project.description?.split(" ").slice(0, 10).join(" ")}...
             </p>
 

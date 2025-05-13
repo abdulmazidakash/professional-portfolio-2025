@@ -58,11 +58,11 @@ const SkillsSection = () => {
           <p className={`mb-4 font-semibold ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
             I create beautiful and scalable web products.
           </p>
-          <p className={`mb-4 font-semibold ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+          <p className={`mb-4 font-semibold text-justify ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
             I specialize in web development and design, using modern technologies to create responsive and user-friendly websites. 
             My expertise covers front-end and back-end technologies, ensuring optimal performance and SEO-friendly structures.
           </p>
-          <p className={`font-semibold ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+          <p className={`font-semibold text-justify ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
             With experience in HTML, CSS, JavaScript, React, and more, I build scalable solutions that enhance user engagement.
           </p>
         </div>
