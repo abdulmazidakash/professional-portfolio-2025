@@ -10,7 +10,7 @@ const Projects = () => {
   const { data: projects = [] } = useQuery({
     queryKey: ["projects"],
     queryFn: async()=> {
-      const response = await axios.get("http://localhost:3000/six-project");
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/six-project`);
       // console.log(`response----> ${response.data}`);
       return response.data;
       },

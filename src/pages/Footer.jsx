@@ -23,7 +23,7 @@ const Footer = () => {
           <a href="#contact" className="link link-hover">
             Contact
           </a>
-          <Link  to={'/personal-dashboard'} className="link link-hover">
+          <Link  to={'/personal-dashboard'} className="link link-hover hidden">
            Personal Dashboard
           </Link>
         </nav>

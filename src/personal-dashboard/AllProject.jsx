@@ -10,7 +10,7 @@ const AllProject = () => {
   const { data: projects = [], refetch } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
-      const response = await axios.get("http://localhost:3000/all-project");
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/all-project`);
       return response.data;
     },
   });
@@ -29,7 +29,7 @@ const AllProject = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/projects/${id}`);
+        await axios.delete(`${import.meta.env.VITE_API_URL}/projects/${id}`);
         await refetch();
         Swal.fire("Deleted!", "The project has been deleted.", "success");
       } catch (error) {

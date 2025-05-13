@@ -13,6 +13,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import Swal from "sweetalert2";
 
 const AddProjectForm = () => {
 
@@ -72,21 +73,38 @@ const improvements = improvementsText
       return toast.error("Please fill all the fields");
     }
 
-    try {
-      const response = await axios.post(`http://localhost:3000/add-project`, projectData);
-      console.log(response.data);
 
-      if (response.status === 200 || response.status === 201) {
-        toast.success('projectData added successfully!');
-        form.reset();
-        navigate(`/all-project`);
-      } else {
-        toast.error('Failed to add projectData!');
-      }
-    } catch (error) {
-      console.error('Error adding projectData:', error);
-      toast.error('Error adding projectData!');
-    } 
+try {
+  const response = await axios.post(`${import.meta.env.VITE_API_URL}/add-project`, projectData);
+  console.log(response.data);
+
+  if (response.status === 200 || response.status === 201) {
+    Swal.fire({
+      icon: 'success',
+      title: 'Success!',
+      text: 'Project added successfully!',
+      timer: 2000,
+      showConfirmButton: false
+    });
+
+    form.reset();
+    navigate(`/all-project`);
+  } else {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Failed to add project!',
+    });
+  }
+} catch (error) {
+  console.error('Error adding projectData:', error);
+  Swal.fire({
+    icon: 'error',
+    title: 'Something went wrong!',
+    text: 'Error adding project!',
+  });
+}
+
 
   }
 

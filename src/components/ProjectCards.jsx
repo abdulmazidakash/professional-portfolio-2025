@@ -14,8 +14,9 @@ const ProjectCard = ({ project }) => {
 	MongoDB: "badge-success",
 	Stripe: "badge-warning",
 	Express: "badge-accent",
-	Firebase: "badge-error",
+	"Firebase Auth": "badge-neutral",
 	Node: "badge-info",
+	Gemini: "badge-accent",
   };
   
 
@@ -45,19 +46,20 @@ const ProjectCard = ({ project }) => {
             </p>
 
             {/* technology input  */}
-            <div className="flex flex-wrap gap-2 mt-2">
-              {typeof project.technologies === "string"
-                ? project.technologies.split(',').map((tech, index) => (
-                    <span className={`badge ${techColors[tech.trim()] || "badge-neutral"}`} key={index}>
-                      {tech.trim()}
-                    </span>
-                  ))
-                : project.technologies.map((tech, index) => (
-                    <span className={`badge ${techColors[tech.trim()] || "badge-neutral"}`} key={index}>
-                      {tech.trim()}
-                    </span>
-                  ))}
-            </div>
+            {/* technology input  */}
+        <div className="flex flex-wrap gap-2 mt-2">
+          {(typeof project.technologies === "string"
+            ? project.technologies.split(',')
+            : project.technologies
+          )
+            .slice(0, 3) // 👈 LIMIT TO 3 BADGES
+            .map((tech, index) => (
+              <span className={`badge ${techColors[tech.trim()] || "badge-neutral"}`} key={index}>
+                {tech.trim()}
+              </span>
+            ))}
+        </div>
+
 
         <div className="card-actions justify-between mt-5 flex flex-wrap gap-2">
           <a

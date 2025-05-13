@@ -22,7 +22,7 @@ import Swal from "sweetalert2";
 	const { data: project = [] } = useQuery({
 		queryKey: ["project", id],
 		queryFn: async () => {
-		  const response = await axios.get(`http://localhost:3000/projects/${id}`);
+		  const response = await axios.get(`${import.meta.env.VITE_API_URL}/projects/${id}`);
 		  return response.data;
 		},
 	  });
@@ -78,7 +78,7 @@ import Swal from "sweetalert2";
 		};
 	  
 		try {
-		  const response = await axios.put(`http://localhost:3000/update-project/${id}`, updatedProject);
+		  const response = await axios.put(`${import.meta.env.VITE_API_URL}/update-project/${id}`, updatedProject);
 		  if (response.status === 200) {
 			await Swal.fire({
 			  icon: 'success',

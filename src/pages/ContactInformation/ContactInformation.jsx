@@ -32,7 +32,7 @@ const ContactInformation = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/send-email", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -131,7 +131,7 @@ const ContactInformation = () => {
               onChange={handleChange}
               className={`textarea textarea-bordered w-full ${darkMode ? "bg-gray-800 text-white border-gray-600" : "bg-white text-gray-900"}`}
             ></textarea>
-            <button type="submit" className="btn btn-primary w-full">Send</button>
+            <button type="submit" className="btn btn-primary border-b-2 w-full">Send</button>
           </form>
 
       </div>

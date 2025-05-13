@@ -75,9 +75,9 @@ const Hero = () => {
           >
             <a 
               target="_blank" 
-              href="https://drive.google.com/drive/folders/1--75kcFgvxmF5xWuTbKLai8OvSSoNCyf?usp=sharing" 
+              href="https://drive.google.com/file/d/1wVq1FbMoFVevw7zMfkUZMsh9EEIopk3R/view?usp=sharing" 
               download
-              className="btn btn-primary px-6 py-3 text-lg"
+              className="btn btn-primary border-b-2 px-6 py-3 text-lg"
             >
             <Typewriter
           words={['Download Resume', 'Get My CV', 'Resume Here!']}
