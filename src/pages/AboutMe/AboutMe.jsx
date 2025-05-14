@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { motion } from "framer-motion";
-import { FaLaptopCode } from "react-icons/fa";
-import { GiShuttlecock } from "react-icons/gi";
-import { MdSportsCricket } from "react-icons/md";
+// import { FaLaptopCode } from "react-icons/fa";
+// import { GiShuttlecock } from "react-icons/gi";
+// import { MdSportsCricket } from "react-icons/md";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { Typewriter } from "react-simple-typewriter";
+import lottieAbout from '../../assets/lottie/about.json'
+import Lottie from "lottie-react";
 
 
 const AboutMe = () => {
@@ -54,6 +56,23 @@ const AboutMe = () => {
 
       {/* Main Content Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                  {/* Hobbies Section */}
+        <motion.div
+          className={`card shadow-xl p-4 md:p-6 overflow-hidden ${
+            darkMode ? "bg-gray-800 text-gray-200" : "bg-base-100 text-gray-700"
+          }`}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+         
+          <Lottie
+            animationData={lottieAbout}
+            loop={true}
+            className="w-full h-96"/>
+       
+        </motion.div>
+
         {/* Introduction Section */}
         <motion.div
           className={`card shadow-xl p-4 md:p-6 overflow-hidden ${
@@ -64,67 +83,19 @@ const AboutMe = () => {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <div className="card-body p-0 md:p-4">
-            <p className="mb-3 md:mb-4 text-base font-semibold text-justify">
-              Hi, I’m Abdul Mazid Akash, a passionate frontend web developer with a knack for creating beautiful and functional web applications. My journey started from curiosity, and over time, I&apos;ve honed my skills in HTML, CSS, JavaScript, React, and Tailwind CSS.
+            <p className=" text-base font-semibold text-justify">
+            This is Abdul Mazid Akash. I’m a student currently studying B.Sc. in Textile Engineering at Narsingdi Textile Engineering College. My hometown is Feni, but I’m now living in Narsingdi for my studies.
             </p>
             <p className="text-base font-semibold text-justify">
-              I love building interactive UI/UX and enjoy the challenge of solving problems with code. There’s always something new to learn in programming, which keeps me motivated and excited about the work I do.
+            I recently completed a web development course from Programming Hero. Right now, I’m building web applications using JavaScript, React.js, Node.js, and MongoDB. I enjoy creating websites that are both user-friendly and responsive.
+            </p>
+            <p className="text-base font-semibold text-justify">
+            I’ve worked on several projects, including ScholarshipHub, a scholarship management system. One of my main team projects is TickTo, a bus ticket booking platform. In TickTo, I worked on real-time seat selection and secure payment features. This project helped me grow my frontend and backend skills and taught me how to work well in a team.
             </p>
           </div>
         </motion.div>
 
-        {/* Hobbies Section */}
-        <motion.div
-          className={`card shadow-xl p-4 md:p-6 overflow-hidden ${
-            darkMode ? "bg-gray-800 text-gray-200" : "bg-base-100 text-gray-700"
-          }`}
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <div className="card-body p-0 md:p-4">
-            <h3 className={`text-lg md:text-xl font-semibold ${
-              darkMode ? "text-white" : "text-gray-800"
-            } mb-3 md:mb-4`}>
-              Hobbies & Interests
-            </h3>
-            <ul className="space-y-3 md:space-y-4">
-              <motion.li
-                className="flex items-start"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, delay: 0.6 }}
-              >
-                <MdSportsCricket className="flex-shrink-0 text-xl md:text-2xl mr-2 md:mr-3 text-green-600" />
-                <span className="text-sm md:text-base text-justify">
-                  Cricket - I&apos;m passionate about cricket, both playing and watching. The strategy and teamwork involved in the game fascinate me, and I enjoy weekend matches with friends.
-                </span>
-              </motion.li>
-              <motion.li
-                className="flex items-start"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, delay: 0.7 }}
-              >
-                <GiShuttlecock className="flex-shrink-0 text-xl md:text-2xl mr-2 md:mr-3 text-purple-600" />
-                <span className="text-sm md:text-base text-justify">
-                  Badminton - I love the fast-paced nature of badminton. It&apos;s my go-to sport for staying active and improving reflexes, playing regularly at local courts.
-                </span>
-              </motion.li>
-              <motion.li
-                className="flex items-start"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, delay: 0.8 }}
-              >
-                <FaLaptopCode className="flex-shrink-0 text-xl md:text-2xl mr-2 md:mr-3 text-blue-600" />
-                <span className="text-sm md:text-base text-justify">
-                  Coding - Of course, coding is both my profession and my passion! It’s the heart of everything I do.
-                </span>
-              </motion.li>
-            </ul>
-          </div>
-        </motion.div>
+
       </div>
     </motion.div>
   );
