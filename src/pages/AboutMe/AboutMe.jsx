@@ -1,8 +1,5 @@
 import { useContext } from "react";
 import { motion } from "framer-motion";
-// import { FaLaptopCode } from "react-icons/fa";
-// import { GiShuttlecock } from "react-icons/gi";
-// import { MdSportsCricket } from "react-icons/md";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { Typewriter } from "react-simple-typewriter";
 import lottieAbout from '../../assets/lottie/about.json'
@@ -87,10 +84,10 @@ const AboutMe = () => {
             This is Abdul Mazid Akash. I’m a student currently studying B.Sc. in Textile Engineering at Narsingdi Textile Engineering College. My hometown is Feni, but I’m now living in Narsingdi for my studies.
             </p>
             <p className="text-base font-semibold text-justify">
-            I recently completed a web development course from Programming Hero. Right now, I’m building web applications using JavaScript, React.js, Node.js, and MongoDB. I enjoy creating websites that are both user-friendly and responsive.
+            I recently completed a web development course from <a className="underline text-blue-500" target="_blank" href="https://www.programming-hero.com/">Programming Hero</a>. Right now, I’m building web applications using JavaScript, React.js, Node.js, and MongoDB. I enjoy creating websites that are both user-friendly and responsive.
             </p>
             <p className="text-base font-semibold text-justify">
-            I’ve worked on several projects, including ScholarshipHub, a scholarship management system. One of my main team projects is TickTo, a bus ticket booking platform. In TickTo, I worked on real-time seat selection and secure payment features. This project helped me grow my frontend and backend skills and taught me how to work well in a team.
+            I’ve worked on several projects, including <a className="underline text-blue-500" target="_blank" href="https://scholarship-hub-akash.netlify.app/">ScholarshipHub</a>, a scholarship management system. One of my main team projects is <a  className="underline text-blue-500" target="_blank" href="https://tickto-booking.netlify.app/">TickTo</a>, a bus ticket booking platform. In TickTo, I worked on real-time seat selection and secure payment features. This project helped me grow my frontend and backend skills and taught me how to work well in a team.
             </p>
           </div>
         </motion.div>
