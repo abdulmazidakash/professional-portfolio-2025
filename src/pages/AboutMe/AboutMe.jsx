@@ -52,7 +52,7 @@ const AboutMe = () => {
       </div>
 
       {/* Main Content Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
                   {/* Hobbies Section */}
         <motion.div
           className={`card shadow-xl p-4 md:p-6 overflow-hidden ${
