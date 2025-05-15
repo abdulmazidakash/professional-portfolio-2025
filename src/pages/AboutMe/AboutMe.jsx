@@ -81,7 +81,7 @@ const AboutMe = () => {
         >
           <div className="card-body p-0 md:p-4">
             <p className=" text-base font-semibold text-justify">
-            This is Abdul Mazid Akash. I’m a student currently studying B.Sc. in Textile Engineering at Narsingdi Textile Engineering College. My hometown is Feni, but I’m now living in Narsingdi for my studies.
+            This is <a className="underline text-blue-500" target="_blank" href="https://github.com/abdulmazidakash">Abdul Mazid Akash</a>. I’m a student currently studying B.Sc. in Textile Engineering at Narsingdi Textile Engineering College. My hometown is Feni, but I’m now living in Narsingdi for my studies.
             </p>
             <p className="text-base font-semibold text-justify">
             I recently completed a web development course from <a className="underline text-blue-500" target="_blank" href="https://www.programming-hero.com/">Programming Hero</a>. Right now, I’m building web applications using JavaScript, React.js, Node.js, and MongoDB. I enjoy creating websites that are both user-friendly and responsive.
